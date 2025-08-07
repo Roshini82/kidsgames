@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Match - Kid's Game Hub</title>
+    <link rel="stylesheet" href="color-styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <button class="back-btn" onclick="goBack()">
+                ← Back to Games
+            </button>
+            <div class="header-content">
+                <div class="game-title">
+                    <span class="game-icon">🎨</span>
+                    <h1>Color Match</h1>
+                </div>
+                <div class="score-board">
+                    <div class="score">Score: <span id="score">0</span></div>
+                    <div class="level">Level: <span id="level">1</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-area">
+            <div class="character">
+                <div class="color-cat">🐱</div>
+                <div class="speech-bubble" id="speechBubble">
+                    Let's learn colors together!
+                </div>
+            </div>
+
+            <div class="instructions" id="instructions">
+                Drag the colored circle to match its name!
+            </div>
+
+            <div class="drag-area">
+                <div class="color-source" id="colorSource">
+                    <div class="draggable-color" draggable="true" id="draggableColor"></div>
+                    <div class="color-label" id="colorLabel">RED</div>
+                </div>
+            </div>
+
+            <div class="drop-zones" id="dropZones">
+                <div class="drop-zone" data-color="red">
+                    <span class="zone-label">RED</span>
+                    <div class="zone-preview red"></div>
+                </div>
+                <div class="drop-zone" data-color="blue">
+                    <span class="zone-label">BLUE</span>
+                    <div class="zone-preview blue"></div>
+                </div>
+                <div class="drop-zone" data-color="green">
+                    <span class="zone-label">GREEN</span>
+                    <div class="zone-preview green"></div>
+                </div>
+                <div class="drop-zone" data-color="yellow">
+                    <span class="zone-label">YELLOW</span>
+                    <div class="zone-preview yellow"></div>
+                </div>
+            </div>
+
+            <div class="feedback" id="feedback"></div>
+
+            <div class="game-stats">
+                <div class="stat">
+                    <span class="stat-icon">🎯</span>
+                    <span>Matches: <span id="matches">0</span></span>
+                </div>
+                <div class="stat">
+                    <span class="stat-icon">🌈</span>
+                    <span>Colors: <span id="colorsLearned">0</span></span>
+                </div>
+                <div class="stat">
+                    <span class="stat-icon">⭐</span>
+                    <span>Streak: <span id="streak">0</span></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="level-complete" id="levelComplete" style="display: none;">
+            <div class="completion-content">
+                <h2>🌈 Amazing!</h2>
+                <p>You're learning colors so well!</p>
+                <button class="next-level-btn" onclick="nextLevel()">Next Level</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="color-script.js"></script>
+</body>
+</html>
