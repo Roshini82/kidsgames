@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kid's Game Hub - Fun Learning Games!</title>
+    <link rel="stylesheet" href="home-styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="main-header">
+            <div class="character">
+                <div class="character-emoji">🎯</div>
+                <div class="excitement-stars">✨</div>
+            </div>
+            <div class="title">
+                <h1>Kid's Game Hub</h1>
+                <p>Choose your favorite learning game!</p>
+            </div>
+        </header>
+
+        <!-- Games Grid -->
+        <div class="games-grid">
+            <!-- Spelling Game Card -->
+            <div class="game-card spelling-card">
+                <div class="game-icon">
+                    <div class="game-emoji">📚</div>
+                    <div class="game-preview">
+                        <span class="preview-emoji">🚌</span>
+                        <div class="preview-boxes">
+                            <div class="mini-box">B</div>
+                            <div class="mini-box">U</div>
+                            <div class="mini-box">S</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-info">
+                    <h2>Spelling Game</h2>
+                    <p>Learn to spell words with Tara! Look at pictures and spell the words correctly.</p>
+                    <div class="game-features">
+                        <span class="feature">🎯 8 Fun Words</span>
+                        <span class="feature">🏆 Score Points</span>
+                        <span class="feature">🖼️ Visual Learning</span>
+                    </div>
+                </div>
+                <button class="play-btn" onclick="navigateToGame('spelling-game/spelling-game.html')">
+                    <span>Play Spelling Game</span>
+                    <span class="arrow">→</span>
+                </button>
+            </div>
+
+            <!-- Pacman Game Card -->
+            <div class="game-card pacman-card">
+                <div class="game-icon">
+                    <div class="game-emoji">🟡</div>
+                    <div class="game-preview">
+                        <div class="pacman-dots">
+                            <span class="dot">•</span>
+                            <span class="dot">•</span>
+                            <span class="dot">•</span>
+                        </div>
+                        <div class="pacman-ghost">👻</div>
+                    </div>
+                </div>
+                <div class="game-info">
+                    <h2>Pacman Game</h2>
+                    <p>Classic arcade fun! Navigate through the maze, collect dots and avoid the ghosts.</p>
+                    <div class="game-features">
+                        <span class="feature">🕹️ Classic Arcade</span>
+                        <span class="feature">⚡ Fast Action</span>
+                        <span class="feature">🍒 Collect Dots</span>
+                    </div>
+                </div>
+                <button class="play-btn" onclick="navigateToGame('pacman/index.html')">
+                    <span>Play Pacman</span>
+                    <span class="arrow">→</span>
+                </button>
+            </div>
+
+            <!-- Memory Match Game Card -->
+            <div class="game-card memory-card">
+                <div class="game-icon">
+                    <div class="game-emoji">🧩</div>
+                    <div class="game-preview">
+                        <div class="memory-cards">
+                            <div class="memory-card-mini">🍎</div>
+                            <div class="memory-card-mini">❓</div>
+                            <div class="memory-card-mini">🍎</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-info">
+                    <h2>Memory Match</h2>
+                    <p>Test your memory! Find matching pairs of colorful cards and improve your concentration.</p>
+                    <div class="game-features">
+                        <span class="feature">🧠 Brain Training</span>
+                        <span class="feature">🎨 Colorful Cards</span>
+                        <span class="feature">⏱️ Timed Challenge</span>
+                    </div>
+                </div>
+                <button class="play-btn" onclick="navigateToGame('memory-game/index.html')">
+                    <span>Play Memory Match</span>
+                    <span class="arrow">→</span>
+                </button>
+            </div>
+
+            <!-- Math Quiz Game Card -->
+            <div class="game-card math-card">
+                <div class="game-icon">
+                    <div class="game-emoji">🔢</div>
+                    <div class="game-preview">
+                        <div class="math-problem">
+                            <span class="math-num">2</span>
+                            <span class="math-op">+</span>
+                            <span class="math-num">3</span>
+                            <span class="math-eq">=</span>
+                            <span class="math-ans">?</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-info">
+                    <h2>Math Quiz</h2>
+                    <p>Practice addition and subtraction with fun math problems. Perfect for learning numbers!</p>
+                    <div class="game-features">
+                        <span class="feature">➕ Addition</span>
+                        <span class="feature">➖ Subtraction</span>
+                        <span class="feature">🏆 High Scores</span>
+                    </div>
+                </div>
+                <button class="play-btn" onclick="navigateToGame('math-game/index.html')">
+                    <span>Play Math Quiz</span>
+                    <span class="arrow">→</span>
+                </button>
+            </div>
+
+            <!-- Color Match Game Card -->
+            <div class="game-card color-card">
+                <div class="game-icon">
+                    <div class="game-emoji">🎨</div>
+                    <div class="game-preview">
+                        <div class="color-circles">
+                            <div class="color-circle red"></div>
+                            <div class="color-circle blue"></div>
+                            <div class="color-circle green"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-info">
+                    <h2>Color Match</h2>
+                    <p>Learn colors by matching them correctly! Drag and drop colors to their right places.</p>
+                    <div class="game-features">
+                        <span class="feature">🌈 Learn Colors</span>
+                        <span class="feature">🖱️ Drag & Drop</span>
+                        <span class="feature">🎵 Fun Sounds</span>
+                    </div>
+                </div>
+                <button class="play-btn" onclick="navigateToGame('color-game/index.html')">
+                    <span>Play Color Match</span>
+                    <span class="arrow">→</span>
+                </button>
+            </div>
+
+            <!-- Shape Puzzle Game Card -->
+            <div class="game-card shape-card">
+                <div class="game-icon">
+                    <div class="game-emoji">🔺</div>
+                    <div class="game-preview">
+                        <div class="shape-preview">
+                            <div class="shape triangle"></div>
+                            <div class="shape circle"></div>
+                            <div class="shape square"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-info">
+                    <h2>Shape Puzzle</h2>
+                    <p>Identify and sort different shapes! Learn about circles, squares, triangles and more.</p>
+                    <div class="game-features">
+                        <span class="feature">🔷 Learn Shapes</span>
+                        <span class="feature">🧩 Sorting Fun</span>
+                        <span class="feature">📏 Geometry</span>
+                    </div>
+                </div>
+                <button class="play-btn" onclick="navigateToGame('shape-game/index.html')">
+                    <span>Play Shape Puzzle</span>
+                    <span class="arrow">→</span>
+                </button>
+            </div>
+
+            <!-- Snake Game Card -->
+            <div class="game-card snake-card">
+                <div class="game-icon">
+                    <div class="game-emoji">🐍</div>
+                    <div class="game-preview">
+                        <div class="snake-preview">
+                            <div class="snake-segment"></div>
+                            <div class="snake-segment"></div>
+                            <div class="snake-segment head"></div>
+                            <div class="pie-preview">🥧</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-info">
+                    <h2>Snake & Pie</h2>
+                    <p>Control the hungry snake to eat delicious pies! Grow longer but don't hit the walls!</p>
+                    <div class="game-features">
+                        <span class="feature">🎮 Arrow Controls</span>
+                        <span class="feature">🥧 Eat Pies</span>
+                        <span class="feature">📏 Grow Longer</span>
+                    </div>
+                </div>
+                <button class="play-btn" onclick="navigateToGame('snake-game/index.html')">
+                    <span>Play Snake & Pie</span>
+                    <span class="arrow">→</span>
+                </button>
+            </div>
+
+            <!-- Animal Sound Game Card -->
+            <div class="game-card animal-card">
+                <div class="game-icon">
+                    <div class="game-emoji">🐄</div>
+                    <div class="game-preview">
+                        <div class="animal-preview">
+                            <span class="animal-sound">🐶</span>
+                            <span class="sound-wave">♪</span>
+                            <span class="animal-sound">🐱</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-info">
+                    <h2>Animal Sounds</h2>
+                    <p>Listen to animal sounds and guess which animal makes them! Fun learning about animals.</p>
+                    <div class="game-features">
+                        <span class="feature">🔊 Real Sounds</span>
+                        <span class="feature">🐾 Learn Animals</span>
+                        <span class="feature">🎵 Audio Fun</span>
+                    </div>
+                </div>
+                <button class="play-btn" onclick="navigateToGame('animal-game/index.html')">
+                    <span>Play Animal Sounds</span>
+                    <span class="arrow">→</span>
+                </button>
+            </div>
+
+            <!-- Number Counting Game Card -->
+            <div class="game-card counting-card">
+                <div class="game-icon">
+                    <div class="game-emoji">🔢</div>
+                    <div class="game-preview">
+                        <div class="counting-preview">
+                            <span class="count-item">🍎</span>
+                            <span class="count-item">🍎</span>
+                            <span class="count-item">🍎</span>
+                            <span class="count-number">3</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-info">
+                    <h2>Number Counting</h2>
+                    <p>Count colorful objects and learn numbers! Perfect for early math skills development.</p>
+                    <div class="game-features">
+                        <span class="feature">🔢 Learn Numbers</span>
+                        <span class="feature">🍎 Count Objects</span>
+                        <span class="feature">🎯 Practice Math</span>
+                    </div>
+                </div>
+                <button class="play-btn" onclick="navigateToGame('counting-game/index.html')">
+                    <span>Play Number Counting</span>
+                    <span class="arrow">→</span>
+                </button>
+            </div>
+
+            <!-- Letter Matching Game Card -->
+            <div class="game-card letter-card">
+                <div class="game-icon">
+                    <div class="game-emoji">🔤</div>
+                    <div class="game-preview">
+                        <div class="letter-preview">
+                            <span class="big-letter">A</span>
+                            <span class="match-arrow">↔</span>
+                            <span class="small-letter">a</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-info">
+                    <h2>Letter Matching</h2>
+                    <p>Match uppercase and lowercase letters! Learn the alphabet in a fun interactive way.</p>
+                    <div class="game-features">
+                        <span class="feature">🔤 ABC Learning</span>
+                        <span class="feature">🎯 Match Letters</span>
+                        <span class="feature">📝 Reading Prep</span>
+                    </div>
+                </div>
+                <button class="play-btn" onclick="navigateToGame('letter-game/index.html')">
+                    <span>Play Letter Matching</span>
+                    <span class="arrow">→</span>
+                </button>
+            </div>
+
+            <!-- Simple Piano Game Card -->
+            <div class="game-card piano-card">
+                <div class="game-icon">
+                    <div class="game-emoji">🎹</div>
+                    <div class="game-preview">
+                        <div class="piano-preview">
+                            <div class="piano-key white"></div>
+                            <div class="piano-key black"></div>
+                            <div class="piano-key white"></div>
+                            <div class="music-note">♪</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-info">
+                    <h2>Simple Piano</h2>
+                    <p>Create beautiful music! Play piano keys and learn simple melodies with colorful keys.</p>
+                    <div class="game-features">
+                        <span class="feature">🎹 Piano Keys</span>
+                        <span class="feature">🎵 Make Music</span>
+                        <span class="feature">🌈 Color Learning</span>
+                    </div>
+                </div>
+                <button class="play-btn" onclick="navigateToGame('piano-game/index.html')">
+                    <span>Play Simple Piano</span>
+                    <span class="arrow">→</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Have fun learning and playing! 🎮✨</p>
+        </footer>
+    </div>
+
+    <script src="home-script.js"></script>
+</body>
+</html>
