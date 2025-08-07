@@ -1,0 +1,58 @@
+<!DOCTYPE html>           
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spelling Game - Kid's Game Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <button class="back-btn" onclick="window.location.href='../index.html'">
+                <span>←</span> Back to Games
+            </button>
+            <div class="character">
+                <div class="character-emoji">�</div>
+                <div class="excitement-stars">✨</div>
+            </div>
+            <div class="title">
+                <h1>Spelling Game</h1>
+                <p>Guess the word from the picture!</p>
+            </div>
+        </header>
+
+        <!-- Game Area -->
+        <div class="game-area">
+            <!-- Image to guess -->
+            <div class="image-container" id="imageContainer">
+                <!-- Image and hint will be generated dynamically -->
+            </div>
+
+            <!-- Answer boxes -->
+            <div class="answer-boxes" id="answerBoxes">
+                <!-- Boxes will be generated dynamically -->
+            </div>
+
+            <!-- Letter buttons -->
+            <div class="letter-buttons" id="letterButtons">
+                <!-- Letter buttons will be generated dynamically -->
+            </div>
+
+            <!-- Next button (initially hidden) -->
+            <div class="next-container">
+                <button id="nextButton" class="next-button" style="display: none;">
+                    <span>→</span>
+                </button>
+            </div>
+
+            <!-- Score display -->
+            <div class="score">
+                <span id="scoreDisplay">Score: 0</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
