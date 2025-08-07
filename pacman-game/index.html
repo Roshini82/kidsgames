@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pac-Man Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <button class="back-home-btn" onclick="window.location.href='../index.html'">
+                <span>←</span> Back to Games
+            </button>
+            <div class="score">Score: <span id="score">0</span></div>
+            <div class="lives">Lives: <span id="lives">3</span></div>
+            <div class="game-status" id="game-status"></div>
+        </div>
+        <div class="game-board" id="game-board">
+            <!-- Maze will be generated here by JavaScript -->
+        </div>
+        <div class="game-controls">
+            <p>Use arrow keys to move Pac-Man</p>
+            <button id="restart-btn" onclick="restartGame()">Restart Game</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
