@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Sounds - Kid's Game Hub</title>
+    <link rel="stylesheet" href="animal-styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <button class="back-btn" onclick="goBack()">
+                ← Back to Games
+            </button>
+            <div class="header-content">
+                <div class="game-title">
+                    <span class="game-icon">🐄</span>
+                    <h1>Animal Sounds</h1>
+                </div>
+                <div class="score-board">
+                    <div class="score">Score: <span id="score">0</span></div>
+                    <div class="level">Level: <span id="level">1</span></div>
+                    <div class="streak">Streak: <span id="streak">0</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-area">
+            <div class="character">
+                <div class="animal-trainer">👩‍🌾</div>
+                <div class="speech-bubble" id="speechBubble">
+                    Listen carefully and guess which animal makes this sound!
+                </div>
+            </div>
+
+            <div class="sound-section">
+                <div class="sound-player">
+                    <button class="play-sound-btn" id="playSoundBtn" onclick="playCurrentSound()">
+                        <span class="sound-icon">🔊</span>
+                        <span class="sound-text">Play Animal Sound</span>
+                    </button>
+                    <div class="sound-waves" id="soundWaves">
+                        <span class="wave"></span>
+                        <span class="wave"></span>
+                        <span class="wave"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="animals-grid" id="animalsGrid">
+                <!-- Animal options will be populated by JavaScript -->
+            </div>
+
+            <div class="game-controls">
+                <button class="next-btn" id="nextBtn" onclick="nextQuestion()" style="display: none;">
+                    Next Animal →
+                </button>
+            </div>
+        </div>
+
+        <div class="game-overlay" id="gameOverlay" style="display: none;">
+            <div class="game-over-screen">
+                <h2>🎉 Great Job! 🎉</h2>
+                <p>You learned about <span id="finalAnimalsCount">0</span> animals!</p>
+                <p>Final Score: <span id="finalScore">0</span></p>
+                <div class="game-over-buttons">
+                    <button class="play-again-btn" onclick="restartGame()">Play Again</button>
+                    <button class="home-btn" onclick="goBack()">Back to Games</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="animal-script.js"></script>
+</body>
+</html>
