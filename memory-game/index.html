@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Match - Kid's Game Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <button class="back-btn" onclick="window.location.href='../index.html'">
+                <span>←</span> Back to Games
+            </button>
+            <div class="character">
+                <div class="character-emoji">🧩</div>
+                <div class="excitement-stars">✨</div>
+            </div>
+            <div class="title">
+                <h1>Memory Match</h1>
+                <p>Find the matching pairs!</p>
+            </div>
+        </header>
+
+        <!-- Game Info -->
+        <div class="game-info">
+            <div class="info-item">
+                <span class="label">Score:</span>
+                <span id="score">0</span>
+            </div>
+            <div class="info-item">
+                <span class="label">Moves:</span>
+                <span id="moves">0</span>
+            </div>
+            <div class="info-item">
+                <span class="label">Time:</span>
+                <span id="timer">00:00</span>
+            </div>
+        </div>
+
+        <!-- Game Board -->
+        <div class="game-board" id="gameBoard">
+            <!-- Cards will be generated dynamically -->
+        </div>
+
+        <!-- Game Status -->
+        <div class="game-status" id="gameStatus">
+            <p>Click on cards to find matching pairs!</p>
+        </div>
+
+        <!-- New Game Button -->
+        <div class="controls">
+            <button class="new-game-btn" onclick="startNewGame()">
+                🎮 New Game
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
