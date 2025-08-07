@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Piano - Kid's Game Hub</title>
+    <link rel="stylesheet" href="piano-styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <button class="back-btn" onclick="goBack()">
+                ← Back to Games
+            </button>
+            <div class="header-content">
+                <div class="game-title">
+                    <span class="game-icon">🎹</span>
+                    <h1>Simple Piano</h1>
+                </div>
+                <div class="score-board">
+                    <div class="mode">Mode: <span id="currentMode">Free Play</span></div>
+                    <div class="notes">Notes: <span id="notesPlayed">0</span></div>
+                    <div class="songs">Songs: <span id="songsLearned">0</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-area">
+            <div class="character">
+                <div class="music-teacher">🎼</div>
+                <div class="speech-bubble" id="speechBubble">
+                    Welcome to the magical piano! Click the colorful keys to make beautiful music!
+                </div>
+            </div>
+
+            <div class="piano-section">
+                <div class="piano-container">
+                    <div class="piano-keys" id="pianoKeys">
+                        <!-- Piano keys will be generated here -->
+                    </div>
+                </div>
+                
+                <div class="music-display">
+                    <div class="floating-notes" id="floatingNotes">
+                        <!-- Musical notes will appear here -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-controls">
+                <div class="control-group">
+                    <button class="mode-btn active" id="freePlayBtn" onclick="setMode('freeplay')">
+                        🎵 Free Play
+                    </button>
+                    <button class="mode-btn" id="learnSongsBtn" onclick="setMode('learn')">
+                        📚 Learn Songs
+                    </button>
+                    <button class="mode-btn" id="colorModeBtn" onclick="setMode('colors')">
+                        🌈 Color Mode
+                    </button>
+                </div>
+                
+                <div class="song-controls" id="songControls" style="display: none;">
+                    <select id="songSelect" onchange="selectSong()">
+                        <option value="">Choose a song...</option>
+                        <option value="twinkle">Twinkle Twinkle Little Star</option>
+                        <option value="mary">Mary Had a Little Lamb</option>
+                        <option value="happy">Happy Birthday</option>
+                    </select>
+                    <button class="play-song-btn" id="playSongBtn" onclick="playSong()">
+                        ▶️ Play Song
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="achievements" id="achievements">
+            <h3>🏆 Musical Achievements</h3>
+            <div class="achievement-grid">
+                <div class="achievement" id="first-note">
+                    <span class="achievement-icon">🎵</span>
+                    <span class="achievement-text">First Note</span>
+                </div>
+                <div class="achievement" id="melody-maker">
+                    <span class="achievement-icon">🎶</span>
+                    <span class="achievement-text">Melody Maker</span>
+                </div>
+                <div class="achievement" id="piano-player">
+                    <span class="achievement-icon">🎹</span>
+                    <span class="achievement-text">Piano Player</span>
+                </div>
+                <div class="achievement" id="music-master">
+                    <span class="achievement-icon">🎼</span>
+                    <span class="achievement-text">Music Master</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="piano-script.js"></script>
+</body>
+</html>
