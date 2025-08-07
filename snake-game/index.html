@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake & Pie - Kid's Game Hub</title>
+    <link rel="stylesheet" href="snake-styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <button class="back-btn" onclick="goBack()">
+                ← Back to Games
+            </button>
+            <div class="header-content">
+                <div class="game-title">
+                    <span class="game-icon">🐍</span>
+                    <h1>Snake & Pie</h1>
+                </div>
+                <div class="score-board">
+                    <div class="score">Score: <span id="score">0</span></div>
+                    <div class="pies">Pies: <span id="piesEaten">0</span></div>
+                    <div class="length">Length: <span id="snakeLength">3</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-area">
+            <div class="character">
+                <div class="snake-chef">👨‍🍳</div>
+                <div class="speech-bubble" id="speechBubble">
+                    Help the snake eat delicious pies!
+                </div>
+            </div>
+
+            <div class="game-board-container">
+                <canvas id="gameCanvas" width="480" height="480"></canvas>
+                <div class="game-overlay" id="gameOverlay">
+                    <div class="start-screen" id="startScreen">
+                        <h2>🐍 Snake & Pie 🥧</h2>
+                        <p>Use arrow keys to move the snake!</p>
+                        <p>Eat pies to grow longer!</p>
+                        <p>Don't hit the walls or yourself!</p>
+                        <button class="start-btn" onclick="startGame()">Start Game</button>
+                    </div>
+                    
+                    <div class="game-over-screen" id="gameOverScreen" style="display: none;">
+                        <h2>Game Over! 😵</h2>
+                        <p id="finalScore">You ate 0 pies!</p>
+                        <p id="finalLength">Final length: 3</p>
+                        <button class="restart-btn" onclick="restartGame()">Play Again</button>
+                    </div>
+                    
+                    <div class="pause-screen" id="pauseScreen" style="display: none;">
+                        <h2>Game Paused ⏸️</h2>
+                        <p>Press SPACE to continue</p>
+                        <button class="resume-btn" onclick="resumeGame()">Resume</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls-info">
+                <div class="control-group">
+                    <div class="control-key">↑</div>
+                    <div class="control-key">←</div>
+                    <div class="control-key">↓</div>
+                    <div class="control-key">→</div>
+                    <span class="control-label">Move Snake</span>
+                </div>
+                <div class="control-group">
+                    <div class="control-key">SPACE</div>
+                    <span class="control-label">Pause/Resume</span>
+                </div>
+            </div>
+
+            <div class="game-stats">
+                <div class="stat">
+                    <span class="stat-icon">🥧</span>
+                    <span>Best: <span id="bestScore">0</span></span>
+                </div>
+                <div class="stat">
+                    <span class="stat-icon">📏</span>
+                    <span>Longest: <span id="bestLength">3</span></span>
+                </div>
+                <div class="stat">
+                    <span class="stat-icon">⚡</span>
+                    <span>Speed: <span id="currentSpeed">Normal</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="snake-script.js"></script>
+</body>
+</html>
