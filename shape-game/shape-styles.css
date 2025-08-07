@@ -1,0 +1,492 @@
+/* Shape Puzzle Game Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.game-container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 700px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.game-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57, #ff9ff3, #a8edea);
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.back-btn {
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
+}
+
+.back-btn:hover {
+    background: #ff5252;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.game-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.game-icon {
+    font-size: 48px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.game-title h1 {
+    color: #2c3e50;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.score-board {
+    display: flex;
+    gap: 20px;
+    text-align: center;
+}
+
+.score, .level {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.game-area {
+    text-align: center;
+}
+
+.character {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.shape-robot {
+    font-size: 60px;
+    animation: rotate 4s ease-in-out infinite;
+}
+
+@keyframes rotate {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    75% { transform: rotate(10deg); }
+}
+
+.speech-bubble {
+    background: #fff;
+    border: 3px solid #a8edea;
+    border-radius: 20px;
+    padding: 10px 15px;
+    margin: 15px auto;
+    max-width: 300px;
+    position: relative;
+    font-size: 16px;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.speech-bubble::before {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid #a8edea;
+}
+
+.instructions {
+    font-size: 18px;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.shape-challenge {
+    margin: 30px 0;
+}
+
+.target-shape {
+    background: rgba(255, 255, 255, 0.9);
+    border: 3px solid #a8edea;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.shape-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.shape-example {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #2c3e50;
+}
+
+.shape-example.circle {
+    border-radius: 50%;
+    background: #4ecdc4;
+}
+
+.shape-example.square {
+    background: #ffe66d;
+}
+
+.shape-example.triangle {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 35px solid #ff6b6b;
+    border-top: none;
+    background: none;
+}
+
+.shape-example.rectangle {
+    width: 50px;
+    height: 30px;
+    background: #a55eea;
+}
+
+.shape-example.diamond {
+    width: 35px;
+    height: 35px;
+    background: #26de81;
+    transform: rotate(45deg);
+}
+
+.shape-example.star {
+    position: relative;
+    background: #feca57;
+    width: 35px;
+    height: 35px;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.shapes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 15px;
+    margin: 30px 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    border: 3px dashed #a8edea;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.game-shape {
+    width: 50px;
+    height: 50px;
+    margin: 10px auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 3px solid #2c3e50;
+    position: relative;
+}
+
+.game-shape:hover {
+    transform: scale(1.1);
+}
+
+.game-shape.found {
+    animation: found 0.6s ease;
+    border-color: #2ed573;
+    box-shadow: 0 0 20px rgba(46, 213, 115, 0.5);
+}
+
+.game-shape.wrong {
+    animation: wrong 0.6s ease;
+    border-color: #ff6b6b;
+}
+
+@keyframes found {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+
+@keyframes wrong {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+    100% { transform: translateX(0); }
+}
+
+/* Shape styles */
+.game-shape.circle {
+    border-radius: 50%;
+    background: #4ecdc4;
+}
+
+.game-shape.square {
+    background: #ffe66d;
+}
+
+.game-shape.triangle {
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 43px solid #ff6b6b;
+    border-top: none;
+    background: none;
+}
+
+.game-shape.rectangle {
+    width: 60px;
+    height: 35px;
+    background: #a55eea;
+}
+
+.game-shape.diamond {
+    width: 40px;
+    height: 40px;
+    background: #26de81;
+    transform: rotate(45deg);
+}
+
+.game-shape.star {
+    background: #feca57;
+    width: 40px;
+    height: 40px;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.progress-bar {
+    margin: 30px 0;
+}
+
+.progress-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.progress-track {
+    width: 100%;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    border: 2px solid #a8edea;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4ecdc4, #44a08d);
+    border-radius: 8px;
+    transition: width 0.5s ease;
+    width: 0%;
+}
+
+.feedback {
+    margin: 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+    min-height: 30px;
+}
+
+.feedback.correct {
+    color: #00b894;
+}
+
+.feedback.wrong {
+    color: #e17055;
+}
+
+.game-stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    color: #2c3e50;
+    border: 2px solid #e9ecef;
+}
+
+.stat-icon {
+    font-size: 18px;
+}
+
+.level-complete {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.completion-content {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: celebrate 0.6s ease;
+}
+
+@keyframes celebrate {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.completion-content h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 2em;
+}
+
+.completion-content p {
+    color: #6c757d;
+    margin-bottom: 25px;
+    font-size: 1.2em;
+}
+
+.next-level-btn {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    color: #2c3e50;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.next-level-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(168, 237, 234, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .game-container {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    .game-title h1 {
+        font-size: 1.8em;
+    }
+    
+    .shapes-grid {
+        grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+        gap: 10px;
+    }
+    
+    .game-shape {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .game-shape.rectangle {
+        width: 50px;
+        height: 30px;
+    }
+    
+    .game-stats {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .score-board {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .target-shape {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .shapes-grid {
+        grid-template-columns: repeat(auto-fit, minmax(45px, 1fr));
+    }
+}

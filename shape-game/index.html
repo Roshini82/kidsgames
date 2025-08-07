@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shape Puzzle - Kid's Game Hub</title>
+    <link rel="stylesheet" href="shape-styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <button class="back-btn" onclick="goBack()">
+                ← Back to Games
+            </button>
+            <div class="header-content">
+                <div class="game-title">
+                    <span class="game-icon">🔺</span>
+                    <h1>Shape Puzzle</h1>
+                </div>
+                <div class="score-board">
+                    <div class="score">Score: <span id="score">0</span></div>
+                    <div class="level">Level: <span id="level">1</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-area">
+            <div class="character">
+                <div class="shape-robot">🤖</div>
+                <div class="speech-bubble" id="speechBubble">
+                    Let's learn about shapes!
+                </div>
+            </div>
+
+            <div class="instructions" id="instructions">
+                Click on all the CIRCLES you can find!
+            </div>
+
+            <div class="shape-challenge" id="shapeChallenge">
+                <div class="target-shape" id="targetShape">
+                    <div class="shape-name">Find all: <span id="shapeName">CIRCLES</span></div>
+                    <div class="shape-example" id="shapeExample"></div>
+                </div>
+                
+                <div class="shapes-grid" id="shapesGrid">
+                    <!-- Shapes will be generated here -->
+                </div>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-label">Progress: <span id="found">0</span>/<span id="total">0</span></div>
+                <div class="progress-track">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+
+            <div class="feedback" id="feedback"></div>
+
+            <div class="game-stats">
+                <div class="stat">
+                    <span class="stat-icon">🎯</span>
+                    <span>Found: <span id="shapesFound">0</span></span>
+                </div>
+                <div class="stat">
+                    <span class="stat-icon">📐</span>
+                    <span>Shapes: <span id="shapesLearned">3</span></span>
+                </div>
+                <div class="stat">
+                    <span class="stat-icon">⭐</span>
+                    <span>Streak: <span id="streak">0</span></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="level-complete" id="levelComplete" style="display: none;">
+            <div class="completion-content">
+                <h2>🔥 Shape Master!</h2>
+                <p>You found all the shapes! Amazing work!</p>
+                <button class="next-level-btn" onclick="nextLevel()">Next Level</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="shape-script.js"></script>
+</body>
+</html>
