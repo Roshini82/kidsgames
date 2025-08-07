@@ -1,0 +1,428 @@
+/* Number Counting Game Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.game-container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 900px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.game-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #74b9ff, #0984e3, #00cec9, #00b894);
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.back-btn {
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.back-btn:hover {
+    background: #ff5252;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.game-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.game-icon {
+    font-size: 2.5em;
+    animation: numberFloat 3s ease-in-out infinite;
+}
+
+@keyframes numberFloat {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-5px) rotate(5deg); }
+}
+
+.game-title h1 {
+    color: #2d3436;
+    font-size: 2.2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.score-board {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.score, .level, .correct {
+    background: linear-gradient(135deg, #00b894, #00cec9);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0, 184, 148, 0.3);
+}
+
+.character {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.counting-teacher {
+    font-size: 4em;
+    margin-bottom: 15px;
+    animation: teacherBounce 2s ease-in-out infinite;
+}
+
+@keyframes teacherBounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.speech-bubble {
+    background: white;
+    padding: 15px 25px;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border: 3px solid #74b9ff;
+    position: relative;
+    margin: 0 auto;
+    max-width: 400px;
+    font-size: 1.1em;
+    color: #2d3436;
+    line-height: 1.4;
+}
+
+.speech-bubble::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #74b9ff;
+}
+
+.speech-bubble::after {
+    content: '';
+    position: absolute;
+    top: -7px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid white;
+}
+
+.counting-section {
+    text-align: center;
+}
+
+.objects-area {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border: 3px dashed #74b9ff;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    min-height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    box-shadow: inset 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.count-object {
+    font-size: 3em;
+    animation: objectPop 0.5s ease-out;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.count-object:hover {
+    transform: scale(1.2);
+}
+
+.count-object.counted {
+    animation: countedPulse 0.6s ease-in-out;
+    transform: scale(1.1);
+}
+
+@keyframes objectPop {
+    0% { transform: scale(0); opacity: 0; }
+    80% { transform: scale(1.1); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes countedPulse {
+    0%, 100% { transform: scale(1.1); }
+    50% { transform: scale(1.3); }
+}
+
+.counting-question {
+    margin-bottom: 30px;
+}
+
+.counting-question h2 {
+    color: #2d3436;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+#objectType {
+    color: #0984e3;
+    font-weight: bold;
+}
+
+.numbers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.number-option {
+    background: white;
+    border: 3px solid #ddd;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    font-size: 2em;
+    font-weight: bold;
+    color: #2d3436;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.number-option:hover {
+    transform: translateY(-5px);
+    border-color: #74b9ff;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.number-option.correct {
+    border-color: #00b894;
+    background: linear-gradient(135deg, #00b894, #00cec9);
+    color: white;
+    transform: scale(1.1);
+    animation: correctBounce 0.6s ease-in-out;
+}
+
+.number-option.wrong {
+    border-color: #ff6b6b;
+    background: #ff6b6b;
+    color: white;
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes correctBounce {
+    0%, 100% { transform: scale(1.1); }
+    50% { transform: scale(1.2); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.game-controls {
+    text-align: center;
+}
+
+.next-btn {
+    background: linear-gradient(135deg, #00b894, #00cec9);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 184, 148, 0.3);
+}
+
+.next-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 184, 148, 0.4);
+}
+
+.game-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.game-over-screen {
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 90%;
+}
+
+.game-over-screen h2 {
+    color: #2d3436;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.game-over-screen p {
+    color: #636e72;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.game-over-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.play-again-btn, .home-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.play-again-btn {
+    background: linear-gradient(135deg, #00b894, #00cec9);
+    color: white;
+}
+
+.home-btn {
+    background: linear-gradient(135deg, #ff6b6b, #ff5252);
+    color: white;
+}
+
+.play-again-btn:hover, .home-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .game-container {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    .game-title h1 {
+        font-size: 1.8em;
+    }
+    
+    .score-board {
+        justify-content: center;
+    }
+    
+    .objects-area {
+        padding: 20px;
+        min-height: 150px;
+    }
+    
+    .count-object {
+        font-size: 2.5em;
+    }
+    
+    .numbers-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .speech-bubble {
+        font-size: 1em;
+        padding: 12px 20px;
+    }
+    
+    .count-object {
+        font-size: 2em;
+    }
+    
+    .number-option {
+        font-size: 1.5em;
+        padding: 15px;
+        min-height: 60px;
+    }
+    
+    .game-over-buttons {
+        flex-direction: column;
+    }
+}
