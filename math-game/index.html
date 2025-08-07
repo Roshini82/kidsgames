@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Quiz - Kid's Game Hub</title>
+    <link rel="stylesheet" href="math-styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <button class="back-btn" onclick="goBack()">
+                ← Back to Games
+            </button>
+            <div class="header-content">
+                <div class="game-title">
+                    <span class="game-icon">🔢</span>
+                    <h1>Math Quiz</h1>
+                </div>
+                <div class="score-board">
+                    <div class="score">Score: <span id="score">0</span></div>
+                    <div class="level">Level: <span id="level">1</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-area">
+            <div class="character">
+                <div class="math-owl">🦉</div>
+                <div class="speech-bubble" id="speechBubble">
+                    Let's solve some math problems!
+                </div>
+            </div>
+
+            <div class="problem-container">
+                <div class="problem" id="problem">
+                    <span class="number" id="num1">2</span>
+                    <span class="operator" id="operator">+</span>
+                    <span class="number" id="num2">3</span>
+                    <span class="equals">=</span>
+                    <span class="answer-display" id="answerDisplay">?</span>
+                </div>
+            </div>
+
+            <div class="answer-options" id="answerOptions">
+                <button class="answer-btn" onclick="selectAnswer(this, 5)">5</button>
+                <button class="answer-btn" onclick="selectAnswer(this, 6)">6</button>
+                <button class="answer-btn" onclick="selectAnswer(this, 4)">4</button>
+                <button class="answer-btn" onclick="selectAnswer(this, 7)">7</button>
+            </div>
+
+            <div class="feedback" id="feedback"></div>
+
+            <div class="game-stats">
+                <div class="stat">
+                    <span class="stat-icon">✅</span>
+                    <span>Correct: <span id="correct">0</span></span>
+                </div>
+                <div class="stat">
+                    <span class="stat-icon">❌</span>
+                    <span>Wrong: <span id="wrong">0</span></span>
+                </div>
+                <div class="stat">
+                    <span class="stat-icon">🎯</span>
+                    <span>Streak: <span id="streak">0</span></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="level-complete" id="levelComplete" style="display: none;">
+            <div class="completion-content">
+                <h2>🎉 Level Complete!</h2>
+                <p>Great job! You're getting better at math!</p>
+                <button class="next-level-btn" onclick="nextLevel()">Next Level</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="math-script.js"></script>
+</body>
+</html>
