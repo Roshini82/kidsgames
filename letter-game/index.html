@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter Matching - Kid's Game Hub</title>
+    <link rel="stylesheet" href="letter-styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <button class="back-btn" onclick="goBack()">
+                ← Back to Games
+            </button>
+            <div class="header-content">
+                <div class="game-title">
+                    <span class="game-icon">🔤</span>
+                    <h1>Letter Matching</h1>
+                </div>
+                <div class="score-board">
+                    <div class="score">Score: <span id="score">0</span></div>
+                    <div class="progress">Progress: <span id="progress">0</span>/26</div>
+                    <div class="streak">Streak: <span id="streak">0</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-area">
+            <div class="character">
+                <div class="alphabet-teacher">👩‍🎓</div>
+                <div class="speech-bubble" id="speechBubble">
+                    Match the uppercase letter with its lowercase partner!
+                </div>
+            </div>
+
+            <div class="matching-section">
+                <div class="letters-container">
+                    <div class="uppercase-section">
+                        <h3>Uppercase Letters</h3>
+                        <div class="letters-grid" id="uppercaseGrid">
+                            <!-- Uppercase letters will be populated here -->
+                        </div>
+                    </div>
+                    
+                    <div class="matching-area">
+                        <div class="match-indicator" id="matchIndicator">
+                            <span class="match-arrow">↔</span>
+                            <span class="match-text">Drag to Match!</span>
+                        </div>
+                    </div>
+                    
+                    <div class="lowercase-section">
+                        <h3>Lowercase Letters</h3>
+                        <div class="letters-grid" id="lowercaseGrid">
+                            <!-- Lowercase letters will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-controls">
+                <button class="hint-btn" id="hintBtn" onclick="showHint()">
+                    💡 Hint
+                </button>
+                <button class="next-btn" id="nextBtn" onclick="nextRound()" style="display: none;">
+                    Next Round →
+                </button>
+                <button class="pronounce-btn" id="pronounceBtn" onclick="pronounceLetter()">
+                    🔊 Say Letter
+                </button>
+            </div>
+        </div>
+
+        <div class="game-overlay" id="gameOverlay" style="display: none;">
+            <div class="game-over-screen">
+                <h2>🎓 Alphabet Master! 🎓</h2>
+                <p>You learned <span id="finalLetters">0</span> letter pairs!</p>
+                <p>Final Score: <span id="finalScore">0</span></p>
+                <p>You're ready for reading! 📚</p>
+                <div class="game-over-buttons">
+                    <button class="play-again-btn" onclick="restartGame()">Practice Again</button>
+                    <button class="home-btn" onclick="goBack()">Back to Games</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="letter-script.js"></script>
+</body>
+</html>
